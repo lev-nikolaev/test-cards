@@ -32,7 +32,7 @@ ScrollTrigger.create({
 
       sections.forEach((section, index) => {
         if (index === currentIndex) {
-          clearTimeout(timers[currentIndex]); // Очистка предыдущего таймера
+          clearTimeout(timers[currentIndex]);
           const timer = setTimeout(() => {
             sections[currentIndex].querySelector('h1').innerHTML = `
         id: ${data[currentIndex].id}
