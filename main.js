@@ -1,11 +1,10 @@
 import gsap from 'gsap'
-import { SplitText } from 'gsap/SplitText'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { lenisInit } from './js/lenisInit.js'
 import { data } from './data/data.js'
 
 // Utils
-gsap.registerPlugin(ScrollTrigger, SplitText)
+gsap.registerPlugin(ScrollTrigger)
 // lenisInit()
 
 // Main code
