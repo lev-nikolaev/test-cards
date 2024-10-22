@@ -27,7 +27,7 @@ ScrollTrigger.create({
     duration: 0.1,
     onComplete: (self) => {
       const progress = self.progress
-      const currentIndex = progress * (sections.length - 1)
+      const currentIndex = Math.round(progress * (sections.length - 1));
       let timers = []
 
       sections.forEach((section, index) => {
