@@ -43,9 +43,6 @@ ScrollTrigger.create({
         } else {
           sections[index].querySelector('h1').innerHTML = 'Loading...'
         }
-
-        return () =>
-          clearTimeout(timer)
       })
     },
   },
