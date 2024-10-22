@@ -27,12 +27,12 @@ ScrollTrigger.create({
     duration: 0.1,
     onComplete: (self) => {
       const progress = self.progress
-      const currentIndex = Math.round(progress * (sections.length - 1));
-      let timers = []
+      const currentIndex = Math.round(progress * (sections.length - 1))
+      let timers = [];
 
       sections.forEach((section, index) => {
         if (index === currentIndex) {
-          clearTimeout(timers[currentIndex])
+          clearTimeout(timers[currentIndex]); // Очистка предыдущего таймера
           const timer = setTimeout(() => {
             sections[currentIndex].querySelector('h1').innerHTML = `
         id: ${data[currentIndex].id}
@@ -40,13 +40,13 @@ ScrollTrigger.create({
         title: ${data[currentIndex].title}
         <br />
         description: ${data[currentIndex].description}
-      `
-          }, 800)
-          timers[currentIndex] = timer
+      `;
+          }, 800);
+          timers[currentIndex] = timer; // Сохранение таймера
         } else {
-          sections[index].querySelector('h1').innerHTML = 'Loading...'
+          sections[index].querySelector('h1').innerHTML = 'Loading...';
         }
-      })
+      });
     },
   },
   pin: true,
