@@ -28,18 +28,21 @@ ScrollTrigger.create({
     onComplete: (self) => {
       const progress = self.progress
       const currentIndex = progress * (sections.length - 1)
+      let timers = []
+
       sections.forEach((section, index) => {
         if (index === currentIndex) {
+          clearTimeout(timers[currentIndex])
           const timer = setTimeout(() => {
-            sections[currentIndex].querySelector('h1').innerHTML =
-              `
-          id: ${data[currentIndex].id}
-          <br />
-          title: ${data[currentIndex].title}
-          <br />
-          description: ${data[currentIndex].description}
-       `
+            sections[currentIndex].querySelector('h1').innerHTML = `
+        id: ${data[currentIndex].id}
+        <br />
+        title: ${data[currentIndex].title}
+        <br />
+        description: ${data[currentIndex].description}
+      `
           }, 800)
+          timers[currentIndex] = timer
         } else {
           sections[index].querySelector('h1').innerHTML = 'Loading...'
         }
