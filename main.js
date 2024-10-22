@@ -39,7 +39,7 @@ ScrollTrigger.create({
           <br />
           description: ${data[currentIndex].description}
        `
-          }, Math.random() * 300 + 700)
+          }, 800)
         } else {
           sections[index].querySelector('h1').innerHTML = 'Loading...'
         }
